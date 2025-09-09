@@ -1,8 +1,8 @@
 {
   "extends": "./tsconfig.app.json",
   "exclude": [],
+  "include": ["src/**/__tests__/*"],
   "compilerOptions": {
-    "composite": true,
     "lib": [],
     "types": ["node", "jsdom"]
   }
