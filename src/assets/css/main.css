@@ -1,0 +1,118 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-primary-50 to-secondary-50 min-h-screen;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-xl transition-all duration-200 shadow-medium hover:shadow-large transform hover:scale-105 active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary-100 hover:bg-secondary-200 text-secondary-700 font-medium py-3 px-6 rounded-xl transition-all duration-200 shadow-soft hover:shadow-medium;
+  }
+  
+  .card {
+    @apply bg-white rounded-2xl shadow-soft border border-secondary-100 p-6;
+  }
+  
+  .card-hover {
+    @apply card hover:shadow-medium transition-shadow duration-200;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 border border-secondary-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent;
+  }
+  
+  .recording-pulse {
+    @apply animate-pulse-slow bg-accent-500;
+  }
+  
+  .fade-in {
+    @apply animate-fade-in;
+  }
+  
+  .slide-up {
+    @apply animate-slide-up;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Custom animations for audio visualization */
+@keyframes audioWave {
+  0%, 100% {
+    transform: scaleY(0.5);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+.audio-wave {
+  animation: audioWave 1s ease-in-out infinite;
+}
+
+.audio-wave:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.audio-wave:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.audio-wave:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.audio-wave:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+}
